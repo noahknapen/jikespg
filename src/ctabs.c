@@ -787,8 +787,8 @@ static void print_java_names(void)
         if (i < num_names)
             *output_ptr++ = ',';
         *output_ptr++ = '\n';
+	BUFFER_CHECK(sysdcl);
     }
-    BUFFER_CHECK(sysdcl);
     if (java_bit)
          mystrcpy("    };\n");
     else mystrcpy("                          };\n");
