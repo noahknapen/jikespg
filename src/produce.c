@@ -869,7 +869,7 @@ process_scope_states:
             }
         }
 
-        partset(collection, element_size, list, start, stack, num_state_sets);
+        partset(collection, element_size, list, start, stack, num_state_sets, 1);
 
         for (i = 1; i <= num_state_sets; i++)
         {
