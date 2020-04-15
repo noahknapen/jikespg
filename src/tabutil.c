@@ -93,6 +93,8 @@ void mystrcpy(char *str)
          *output_ptr++ = *str++;
 
     BUFFER_CHECK(sysdcl);
+// check one more buffer which I saw going corrupt:
+    BUFFER_CHECK(syssym);
 
     return;
 }

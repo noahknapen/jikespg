@@ -81,6 +81,9 @@
 #define NIL            ((short) SHRT_MIN + 1)
 #define DEFAULT_SYMBOL 0
 
+/* Avoid bogus use of strcpy with overlapping regions: */
+#define strcpy(d,s) bcopy(s,d,strlen(s)+1)
+
 /*******************************************************************/
 /*******************************************************************/
 /**                                                               **/
@@ -127,7 +130,8 @@
 #ifdef DOS
 #define IOBUFFER_SIZE 8192
 #else
-#define IOBUFFER_SIZE 65536
+/* increased by factor 10 to avoid core dumps: */
+#define IOBUFFER_SIZE 655360
 #endif
 
 /*******************************************************************/
