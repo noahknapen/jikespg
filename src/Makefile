@@ -1,5 +1,5 @@
 # Makefile for aix for Jikes Parser Generator
-CC = gcc -O1
+CC = gcc
 
 all: jikespg
 
