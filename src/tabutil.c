@@ -632,7 +632,7 @@ void process_error_maps(void)
     }
 
     partset(action_symbols, as_size, state_list, state_start,
-            state_stack, num_terminals);
+            state_stack, num_terminals, 0);
 
     ffree(action_symbols);
 
@@ -718,7 +718,7 @@ void process_error_maps(void)
     }
 
     partset(naction_symbols, as_size, state_list, state_start,
-            state_stack, num_non_terminals);
+            state_stack, num_non_terminals, 0);
 
     ffree(as_size);
     ffree(naction_symbols);
