@@ -93,6 +93,7 @@ void mystrcpy(char *str)
          *output_ptr++ = *str++;
 
     BUFFER_CHECK(sysdcl);
+    BUFFER_CHECK(syssym);
 
     return;
 }
