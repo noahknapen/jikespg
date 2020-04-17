@@ -1542,7 +1542,7 @@ static void insert_string(struct hash_type *q, char *string)
     }
 
     q -> st_ptr = string_offset;
-    while(string_table[string_offset++] = *string++); /* Copy until NULL */
+    while((string_table[string_offset++] = *string++)); /* Copy until NULL */
                                                       /* is copied.      */
     return;
 }
@@ -1921,7 +1921,7 @@ scan_token:
                 tok_string[i] = '\0';
                 sprintf(msg_line,
                         "Symbol \"%s\""
-                        " has been referenced in line %d "
+                        " has been referenced in line %ld "
                         " without the closing \">\"",
                         tok_string, ct_start_line);
                 PRNTERR(msg_line);
@@ -1951,7 +1951,7 @@ scan_token:
                 memcpy(tok_string, p1, ct_length);
                 tok_string[ct_length] = '\0';
                 sprintf(msg_line,
-                        "Symbol \"%s\" referenced in line %d"
+                        "Symbol \"%s\" referenced in line %ld"
                         " requires a closing quote",
                         tok_string, ct_start_line);
                 PRNTWNG(msg_line);
@@ -3101,7 +3101,7 @@ static void mapmacro(int def_index)
         strcmp(defelmt[def_index].name, knext_line)         == 0)
     {
         sprintf(msg_line, "predefined macro \"%s\""
-                          " cannot be redefined. Line %d",
+                          " cannot be redefined. Line %ld",
                           defelmt[def_index].name,
                           defelmt[def_index].start_line);
         PRNTWNG(msg_line);
@@ -3116,7 +3116,7 @@ static void mapmacro(int def_index)
             if (warnings_bit)
             {
                 sprintf(msg_line, "Redefinition of macro \"%s\""
-                                  " in line %d",
+                                  " in line %ld",
                                   defelmt[def_index].name,
                                   defelmt[def_index].start_line);
                 PRNTWNG(msg_line);

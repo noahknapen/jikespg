@@ -674,7 +674,7 @@ static void print_c_names(void)
     /* Compute and list space required for STRING_BUFFER map.        */
     /*****************************************************************/
     sprintf(msg_line,
-            "    Storage required for STRING_BUFFER map: %d Bytes",
+            "    Storage required for STRING_BUFFER map: %ld Bytes",
             num_bytes);
     PRNT(msg_line);
 
@@ -797,7 +797,7 @@ static void print_java_names(void)
     /* Compute and list space required for STRING_BUFFER map.        */
     /*****************************************************************/
     sprintf(msg_line,
-            "    Storage required for STRING_BUFFER map: %d Bytes",
+            "    Storage required for STRING_BUFFER map: %ld Bytes",
             num_bytes);
     PRNT(msg_line);
 
@@ -1112,7 +1112,7 @@ static void print_error_maps(void)
         /* Compute and list space required for TERMINAL_INDEX map.       */
         /*****************************************************************/
         sprintf(msg_line,
-                "    Storage required for TERMINAL_INDEX map: %d Bytes",
+                "    Storage required for TERMINAL_INDEX map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
 
@@ -1164,7 +1164,7 @@ static void print_error_maps(void)
         /* Compute and list space required for NON_TERMINAL_INDEX map.   */
         /*****************************************************************/
         sprintf(msg_line,
-                "    Storage required for NON_TERMINAL_INDEX map: %d Bytes",
+                "    Storage required for NON_TERMINAL_INDEX map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
     }
@@ -1224,7 +1224,7 @@ static void print_error_maps(void)
         /* Compute and list space required for SYMBOL_INDEX map.         */
         /*****************************************************************/
         sprintf(msg_line,
-                "    Storage required for SYMBOL_INDEX map: %d Bytes",
+                "    Storage required for SYMBOL_INDEX map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
     }
@@ -1623,7 +1623,7 @@ static void print_symbols(void)
             PRNT(line);
         }
 
-        sprintf(line, "      %s%s%s = %i,\n\0",
+        sprintf(line, "      %s%s%s = %i,\n",
                       prefix, tok, suffix, symbol_map[symbol]);
 
         if (c_bit || cpp_bit)
@@ -1661,7 +1661,7 @@ static void print_definitions(void)
              fprintf(sysdef,
                      "      ERROR_SYMBOL      = %d,\n"
                      "      MAX_NAME_LENGTH   = %d,\n"
-                     "      NUM_STATES        = %d,\n\n",
+                     "      NUM_STATES        = %ld,\n\n",
                      error_image,
                      max_name_length,
                      num_states);
@@ -1687,7 +1687,7 @@ static void print_definitions(void)
                      "      MIN_DISTANCE      = %d,\n"
                      "      MAX_NAME_LENGTH   = %d,\n"
                      "      MAX_TERM_LENGTH   = %d,\n"
-                     "      NUM_STATES        = %d,\n\n",
+                     "      NUM_STATES        = %ld,\n\n",
 
                      error_image,
                      maximum_distance,
@@ -2092,7 +2092,7 @@ static void print_space_tables(void)
     if (offset > (MAX_TABLE_SIZE + 1))
     {
         sprintf(msg_line, "Table contains entries that are > "
-                "%d; Processing stopped.", MAX_TABLE_SIZE + 1);
+                "%ld; Processing stopped.", MAX_TABLE_SIZE + 1);
         PRNTERR(msg_line);
         exit(12);
     }
@@ -2414,7 +2414,7 @@ static void print_space_tables(void)
                 {
                     sprintf(msg_line,
                         "Table contains look-ahead shift entry that is >"
-                        " %d; Processing stopped.", MAX_TABLE_SIZE + 1);
+                        " %ld; Processing stopped.", MAX_TABLE_SIZE + 1);
                     PRNTERR(msg_line);
                     return;
                 }
@@ -2683,7 +2683,7 @@ static void print_space_tables(void)
             {
                 sprintf(msg_line,
                     "Table contains look-ahead shift entry that is >"
-                    " %d; Processing stopped.", MAX_TABLE_SIZE + 1);
+                    " %ld; Processing stopped.", MAX_TABLE_SIZE + 1);
                 PRNTERR(msg_line);
                 return;
             }
@@ -2803,7 +2803,7 @@ static void print_time_tables(void)
     if (offset > (MAX_TABLE_SIZE + 1))
     {
         sprintf(msg_line, "Table contains entries that are > "
-                "%d; Processing stopped.", MAX_TABLE_SIZE + 1);
+                "%ld; Processing stopped.", MAX_TABLE_SIZE + 1);
         PRNTERR(msg_line);
         exit(12);
     }
@@ -2891,7 +2891,7 @@ static void print_time_tables(void)
             {
                 sprintf(msg_line,
                     "Table contains look-ahead shift entry that is >"
-                    " %d; Processing stopped.", MAX_TABLE_SIZE + 1);
+                    " %ld; Processing stopped.", MAX_TABLE_SIZE + 1);
                 PRNTERR(msg_line);
                 return;
             }

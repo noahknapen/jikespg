@@ -274,7 +274,7 @@ void reallocate(void)
 
     if (table_size == MAX_TABLE_SIZE)
     {
-        sprintf(msg_line, "Table has exceeded maximum limit of %d",
+        sprintf(msg_line, "Table has exceeded maximum limit of %ld",
                           MAX_TABLE_SIZE);
         PRNTERR(msg_line);
         exit(12);
@@ -289,13 +289,13 @@ void reallocate(void)
         {
             sprintf(msg_line,
                     "Reallocating storage for TIME table, "
-                    "adding %d entries", table_size - old_size);
+                    "adding %ld entries", table_size - old_size);
         }
         else
         {
             sprintf(msg_line,
                     "Reallocating storage for SPACE table, "
-                    "adding %d entries", table_size - old_size);
+                    "adding %ld entries", table_size - old_size);
         }
         PRNT(msg_line);
     }
@@ -508,7 +508,7 @@ void process_error_maps(void)
         }
     }
     sprintf(msg_line,
-            "    Storage required for FOLLOW map: %d Bytes",
+            "    Storage required for FOLLOW map: %ld Bytes",
             num_bytes);
     PRNT(msg_line);
 
@@ -538,7 +538,7 @@ void process_error_maps(void)
     /*****************************************************************/
     num_bytes = 2 * num_states;
     sprintf(msg_line,
-            "    Storage required for SORTED_STATE map: %d Bytes",
+            "    Storage required for SORTED_STATE map: %ld Bytes",
             num_bytes);
     PRNT(msg_line);
 
@@ -569,7 +569,7 @@ void process_error_maps(void)
     /*****************************************************************/
     num_bytes = 2 * num_states;
     sprintf(msg_line,
-            "    Storage required for ORIGINAL_STATE map: %d Bytes",
+            "    Storage required for ORIGINAL_STATE map: %ld Bytes",
             num_bytes);
     PRNT(msg_line);
 
@@ -901,7 +901,7 @@ void process_error_maps(void)
     {
         num_bytes = 2 * (num_symbols + offset);
         sprintf(msg_line,
-                "    Storage required for TRANSITION_STATES map: %d Bytes",
+                "    Storage required for TRANSITION_STATES map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
     }
@@ -909,7 +909,7 @@ void process_error_maps(void)
     {
         num_bytes = 2 * (num_terminals + offset);
         sprintf(msg_line,
-                "    Storage required for SHIFT_STATES map: %d Bytes",
+                "    Storage required for SHIFT_STATES map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
 
@@ -970,7 +970,7 @@ void process_error_maps(void)
        /* containing the range elements has size OFFSET - 1                 */
        /*********************************************************************/
        num_bytes = 2 * (num_non_terminals + offset);
-       sprintf(msg_line,"    Storage required for GOTO_STATES map: %d Bytes",
+       sprintf(msg_line,"    Storage required for GOTO_STATES map: %ld Bytes",
                num_bytes);
        PRNT(msg_line);
     }
@@ -1132,7 +1132,7 @@ void process_error_maps(void)
         offset += num_symbols;
 
     sprintf(msg_line,
-            "    Storage required for direct NAME map: %d Bytes",
+            "    Storage required for direct NAME map: %ld Bytes",
             num_bytes + offset);
     PRNT(msg_line);
 
@@ -1152,7 +1152,7 @@ void process_error_maps(void)
         offset += num_symbols;
 
     sprintf(msg_line,
-            "    Storage required for indirect NAME map: %d Bytes",
+            "    Storage required for indirect NAME map: %ld Bytes",
             num_bytes + offset);
     PRNT(msg_line);
 
@@ -1333,7 +1333,7 @@ void process_error_maps(void)
         if (scope_state_size > 255)
             num_bytes += num_scopes;
         sprintf(msg_line,
-                "    Storage required for SCOPE map: %d Bytes",
+                "    Storage required for SCOPE map: %ld Bytes",
                 num_bytes);
         PRNT(msg_line);
     }
