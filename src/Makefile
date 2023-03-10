@@ -1,5 +1,5 @@
 # Makefile for aix for Jikes Parser Generator
-CC = gcc $(CPPFLAGS) $(CFLAGS)
+CC = x86_64-w64-mingw32-gcc $(CPPFLAGS) $(CFLAGS)
 
 all: jikespg
 
